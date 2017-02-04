@@ -3,6 +3,7 @@ body {
 	font-size: 100%;
 	background-color: #f8f8f8;
 	text-shadow: #fff 0px 1px 0px;
+	line-height: 1.5em;
 }
 .table {
 	display: table;
@@ -15,7 +16,7 @@ body {
 .table-cell, .table-head {
 	display: table-cell;
 	padding: 1em;
-	border: #f0f0f0 1px solid;
+	/* border: #f0f0f0 1px solid; */
 }
 .table-head {
 }
@@ -24,4 +25,7 @@ body {
 }
 .spacing {
 	width: 5vw;
+}
+.right-spacing {
+	width: 25vw;
 }

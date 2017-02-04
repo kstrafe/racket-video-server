@@ -6,6 +6,7 @@
          web-server/servlet-env)
 
 (define handler (reloadable-entry-point->procedure (make-reloadable-entry-point 'handler "handler.rkt")))
+(define file-not-found (reloadable-entry-point->procedure (make-reloadable-entry-point 'file-not-found "handler.rkt")))
 
 (define (start req)
   (reload!)
@@ -16,7 +17,8 @@
   #:stateless? #t
   #:listen-ip #f
   #:port 8000
-  #:server-root-path "."
-  #:extra-files-paths (list (build-path "images"))
-  #:servlet-regexp #rx""
-  #:command-line? #t)
+  #:server-root-path (current-directory)
+  #:servlet-regexp #px"^/$|^/p/"
+  #:command-line? #t
+  #:file-not-found-responder file-not-found
+  )
