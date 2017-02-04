@@ -1,4 +1,4 @@
-((p "This blog is mostly about programming and mathematics.")
+'((p "This blog is mostly about programming and mathematics.")
 (p "Click any link to go to an essay or article.")
 (p "The index is sorted by modification date.")
 (p "This software is written in racket v6.8.")

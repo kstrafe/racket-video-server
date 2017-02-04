@@ -5,12 +5,12 @@
          web-server/servlet
          web-server/servlet-env)
 
-(define handler (reloadable-entry-point->procedure (make-reloadable-entry-point 'handler "handler.rkt")))
+(define blog-dispatch (reloadable-entry-point->procedure (make-reloadable-entry-point 'blog-dispatch "handler.rkt")))
 (define file-not-found (reloadable-entry-point->procedure (make-reloadable-entry-point 'file-not-found "handler.rkt")))
 
 (define (start req)
   (reload!)
-  (handler req))
+  (blog-dispatch req))
 
 (serve/servlet start
   ; #:ssl?
@@ -21,4 +21,5 @@
   #:servlet-regexp #px"^/$|^/p/"
   #:command-line? #t
   #:file-not-found-responder file-not-found
+  #:ssl? #t
   )
