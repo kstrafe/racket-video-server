@@ -6,4 +6,4 @@ body.blog { background-color: #f8f8f8; font-family: "Ubuntu", sans-serif; font-s
 .blog .table-column.large { display: table-column; width: 50%; }
 .blog .table-column.small { display: table-column; width: 20%; }
 .blog .table-column.tiny { display: table-column; width: 5%; }
-.blog pre { white-space: pre-wrap; }
+.blog pre { white-space: pre-wrap; word-wrap: break-word; }
