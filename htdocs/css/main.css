@@ -1,0 +1,27 @@
+body {
+	font-family: "Ubuntu", sans-serif;
+	font-size: 100%;
+	background-color: #f8f8f8;
+	text-shadow: #fff 0px 1px 0px;
+}
+.table {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+}
+.table-row {
+	display: table-row;
+}
+.table-cell, .table-head {
+	display: table-cell;
+	padding: 1em;
+	border: #f0f0f0 1px solid;
+}
+.table-head {
+}
+.navigation {
+	width: 10vw;
+}
+.spacing {
+	width: 5vw;
+}
