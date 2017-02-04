@@ -13,7 +13,6 @@
   (blog-dispatch req))
 
 (serve/servlet start
-  ; #:ssl?
   #:stateless? #t
   #:listen-ip #f
   #:port 8000
