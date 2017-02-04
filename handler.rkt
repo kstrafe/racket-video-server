@@ -66,7 +66,11 @@
       (head
         (meta ([charset "UTF-8"]))
         (meta ([name "viewport"] [content "width=device-width,maximum-scale=1,minimum-scale=1"]))
+        (link ([rel "icon"] [type "image/png"] [href "/images/musings_symbol_16.png"]))
+        (link ([rel "icon"] [type "image/png"] [href "/images/musings_symbol_32.png"]))
+        (link ([rel "icon"] [type "image/png"] [href "/images/musings_symbol_64.png"]))
         (script ([type "text/x-mathjax-config"])
+
           "MathJax.Hub.Config({tex2jax: {inlineMath: [['$$','$$']]}});")
         (script ([type "text/javascript"] [async ""] [src "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"]))
         (link ([rel "stylesheet"] [type "text/css"] [href "/css/main.css"]))

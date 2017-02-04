@@ -5,8 +5,10 @@
          web-server/servlet
          web-server/servlet-env)
 
-(define blog-dispatch (reloadable-entry-point->procedure (make-reloadable-entry-point 'blog-dispatch "handler.rkt")))
-(define file-not-found (reloadable-entry-point->procedure (make-reloadable-entry-point 'file-not-found "handler.rkt")))
+(define blog-dispatch (reloadable-entry-point->procedure
+  (make-reloadable-entry-point 'blog-dispatch "handler.rkt")))
+(define file-not-found (reloadable-entry-point->procedure
+  (make-reloadable-entry-point 'file-not-found "handler.rkt")))
 
 (define (start req)
   (reload!)
