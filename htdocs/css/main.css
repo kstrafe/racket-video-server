@@ -3,5 +3,7 @@ body.blog { background-color: #f8f8f8; font-family: "Ubuntu", sans-serif; font-s
 .blog .cell { display: table-cell; vertical-align: top; }
 .blog .table { display: table; overflow-wrap: break-word; table-layout: fixed; width: 100%; }
 .blog .table-column.auto { display: table-column; width: auto; }
+.blog .table-column.large { display: table-column; width: 50%; }
 .blog .table-column.small { display: table-column; width: 20%; }
-.blog .table-column.tiny { display: table-column; width: 10%; }
+.blog .table-column.tiny { display: table-column; width: 5%; }
+.blog pre { white-space: pre-wrap; }
