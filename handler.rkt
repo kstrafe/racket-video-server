@@ -46,22 +46,50 @@
     #:preamble #"<!DOCTYPE html>"
     `(html
       (head
-        (meta ((charset "UTF-8")))
+        (meta ([charset "UTF-8"]))
+        (meta ([name "viewport"] [content "width=device-width,maximum-scale=1,minimum-scale=1"]))
+        (script ([type "text/x-mathjax-config"])
+          "MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});"
+        )
+        (script ([type "text/javascript"] [async ""] [src "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"])
+        )
         (link ((rel "stylesheet") (type "text/css") (href "/css/main.css")))
         (title ,post))
-      (body
+      (body ([class "blog"])
         (div ((class "table"))
-          (div ((class "table-row"))
-            (div ((class "table-head navigation"))
-              (ul
-                ,@(compute-sidebar)
-              )
+          (div ([class "small table-column"]))
+          (div ([class "auto table-column"]))
+          (div ([class "tiny table-column"]))
+          (div ([class "small table-column"]))
+          (div ((class "cell"))
+            (ul
+              ,@(compute-sidebar)
             )
-            (div ((class "table-head spacing")))
-            (div ((class "table-head content"))
-              (h1 ,post)
-              ,@(load-page post))
-            (div ((class "table-head right-spacing")))
+          )
+          (div ((class "cell"))
+            (h1 ,post)
+            ,@(load-page post))
+          (div ((class "cell")))
+          (div ((class "cell"))
+            (div ([id "disqus_thread"]))
+            (script
+              "/**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+              /*
+              var disqus_config = function () {
+                this.page.url = \"krs\";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = \"" ,post \""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//evo-1.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              })();"
+            )
+            (noscript "Please enable JavaScript to view the " (a ([href "https://disqus.com/?ref_noscript"]) "comments powered by Disqus."))
           )
         )
         ))))

@@ -1,31 +1,7 @@
-body {
-	font-family: "Ubuntu", sans-serif;
-	font-size: 100%;
-	background-color: #f8f8f8;
-	text-shadow: #fff 0px 1px 0px;
-	line-height: 1.5em;
-}
-.table {
-	display: table;
-	width: 100%;
-	border-collapse: collapse;
-}
-.table-row {
-	display: table-row;
-}
-.table-cell, .table-head {
-	display: table-cell;
-	padding: 1em;
-	/* border: #f0f0f0 1px solid; */
-}
-.table-head {
-}
-.navigation {
-	width: 10vw;
-}
-.spacing {
-	width: 5vw;
-}
-.right-spacing {
-	width: 25vw;
-}
+@charset "UTF-8";
+body.blog { background-color: #f8f8f8; font-family: "Ubuntu", sans-serif; font-size: 100%; line-height: 1.5em; text-shadow: #fff 0px 1px 0px; }
+.blog .cell { display: table-cell; vertical-align: top; }
+.blog .table { display: table; overflow-wrap: break-word; table-layout: fixed; width: 100%; }
+.blog .table-column.auto { display: table-column; width: auto; }
+.blog .table-column.small { display: table-column; width: 20%; }
+.blog .table-column.tiny { display: table-column; width: 10%; }
