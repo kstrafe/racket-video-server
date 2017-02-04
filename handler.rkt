@@ -2,10 +2,12 @@
 
 (provide blog-dispatch file-not-found)
 
-(require web-server/dispatch
+(require (for-syntax racket/list)
+         (for-syntax racket/pretty)
+         web-server/dispatch
          web-server/servlet
          web-server/servlet-env
-         (for-syntax racket/list))
+         )
 
 (define-namespace-anchor anchor)
 (define namespace (namespace-anchor->namespace anchor))
@@ -15,13 +17,13 @@
 
 (define (stringify datum)
   (let ([op (open-output-string)])
-    (write datum op)
+    (pretty-print datum op)
     (get-output-string op)))
 
 (define-syntax (to-string input)
   (let ([op (open-output-string)]
         [re (first (rest (syntax->datum input)))])
-    (write re op)
+    (pretty-print re op)
     (datum->syntax input #`[codify (string-append #,(get-output-string op) " => " (stringify #,re))])))
 
 (define (serve-index req)
@@ -54,7 +56,8 @@
   (with-handlers
     ((exn?
       (lambda (err)
-        '((p "This file can not be viewed, either because it does not exist or because it's locked.")))))
+        `((p "This file can not be viewed:")
+          (pre ,(stringify err))))))
     (with-input-from-file
       (build-path (get-pages) name)
       (lambda () (eval (read) namespace)))))
