@@ -85,7 +85,7 @@
           (div ([class "large table-column"]))
           (div ([class "tiny table-column"]))
           (div ([class "small table-column"]))
-          (div ([class "cell"])
+          (div ([class "cell big-navigation"])
             (ul
               ,@(compute-sidebar)))
           (div ([class "cell"]))
@@ -93,6 +93,8 @@
             (h1 ,post)
             ,@(load-page post))
           (div ([class "cell"]))
+          (div ([class "cell small-navigation"])
+            (p "To page list: " (a ([href "/p/AllPages"]) "AllPages")))
           (div ([class "cell"])
             (div ([id "disqus_thread"]))
             (script
